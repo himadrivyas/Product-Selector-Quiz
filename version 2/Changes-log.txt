@@ -1,1 +1,6 @@
-Added new changes UX/UI phase 1 completion after 4 reviews. 
+
+1. Email Notifications: The system now generates and sends an email to both the customer and the admin instead of a PDF.
+2. JSON Updates: I have updated the wording within the JSON files.
+3. UI Styling: Adjustments have been made to both mobile and desktop styling, including font sizes and padding for containers and options.
+4. Web Admin Menu: The admin menu now displays total prices.
+5. Review 3: All changes requested in Review 3 have been implemented.
