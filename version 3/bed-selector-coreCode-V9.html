@@ -1,0 +1,119 @@
+<section class="main-selector-frame-container">
+    <div class="main-title-container">
+        <h2 class="hideForQuiz">Welcome to SonderCare's</h2>
+        <h1 class="hideForQuiz">Bed Selector Quiz</h1>
+        <p class="showUpForQuiz">Quiz Section <span class="section-number">1</span> of 3: <span
+                class="section-text golden-text">Size & Style</span></p>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="selector-quiz-container" id="quizContainer">
+        <!-- before quiz initilize -->
+        <div class="beforeQuizStarts-container">
+            <div class="beforeQuizStarts">
+                <div class="intro-slide-image">
+                    <img src="https://www.sondercare.com/wp-content/uploads/2026/03/Intro-screen-image.png" class="center-block"
+                        alt="" />
+                </div>
+                <div class="intro-slide-para center-block">
+                   <p>
+                        There's a lot to choose on a SonderCare bed &hyphen; from size and style to accessories and
+                        delivery.
+                    </p>
+                    <p>
+                        This short quiz will use simple questions about the user and your preferences to
+                        recommend the best solution for you and your loved one.
+                    </p>
+                </div>
+                <div class="intro-slide-steps center-block">
+                    <ul>
+                        <li>Section 1 : Size &amp; Style (3 questions)</li>
+                        <li>Section 2 : User Details (6 questions)</li>
+                        <li>Section 3 : Delivery &amp; Service (2 questions)</li>
+                    </ul>
+                </div>
+                <div class="intro-slide-button">
+                    <button class="startQuiz center-block">Get Started<i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Questions will be dynamically generated here -->
+    </div>
+
+    <!-- Results Container -->
+    <div class="results-container" id="resultsContainer">
+        <!-- <h2 class="results-title">Your Personalized Bed Recommendation</h2> -->
+        <p class="results-title">Thank you for using the SonderCare Bed Selector! <br />Based on your responses and
+            preferences, we are making the recommendations below:</p>
+        <div class="results-summary" id="resultsSummary">
+            <!-- Summary will be generated here -->
+        </div>
+
+        <h3 class="form-title">How would you like to proceed?</h3>
+        <div class="contact-options">
+            <div class="contact-option" data-contact-type="email">
+                <!-- <div class="contact-icon">📧</div> -->
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-title">Email Quote</div>
+                <div class="contact-desc">Receive a detailed quote via email</div>
+            </div>
+            <div class="contact-option" data-contact-type="phone">
+                <!-- <div class="contact-icon">📞</div> -->
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-title">Speak to Expert</div>
+                <div class="contact-desc">Have a bed expert call you</div>
+            </div>
+        </div>
+
+        <!-- Email Form -->
+        <div class="contact-form" id="emailForm">
+            <h3 style="color: #25385b; margin-bottom: 20px;">Enter your email</h3>
+            <div class="form-group">
+                <label for="emailInput">Email Address *</label>
+                <input type="email" id="emailInput" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="nameInput">Name *</label>
+                <input type="text" id="nameInput" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phoneInput">Phone Number (optional)</label>
+                <input type="tel" id="phoneInputOptional" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+                <label for="notesInput">Additional notes (optional)</label>
+                <textarea id="notesInput" rows="4" placeholder="Any special requirements or questions..."></textarea>
+            </div>
+            <button class="submit-button" id="submitEmail">Send Me the Quote</button>
+        </div>
+
+        <!-- Phone Form -->
+        <div class="contact-form" id="phoneForm">
+            <h3 style="color: #25385b; margin-bottom: 20px;">Enter your contact details</h3>
+            <div class="form-group">
+                <label for="phoneNameInput">Name *</label>
+                <input type="text" id="phoneNameInput" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phoneNotesInput">Additional notes (optional)</label>
+                <textarea id="phoneNotesInput" rows="4"
+                    placeholder="Any special requirements or questions..."></textarea>
+            </div>
+            <button class="submit-button" id="submitPhone">Request a Call</button>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            <h3>Thank you! 🎉</h3>
+            <p>We've received your information and will get back to you shortly.</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="selector-navigation-container" id="navigationContainer">
+        <button class="nav-button" id="prevBtn" disabled><i class="fas fa-chevron-left"></i></button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <button class="nav-button" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
