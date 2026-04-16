@@ -1,0 +1,3 @@
+Added a pre result form before users can view their quote, they have to submit their phone number, delivery location and email (optional). Then it shows the quote and last two forms with some reducted form fields. 
+
+Those changes are synced with google sheet updates as well. 
