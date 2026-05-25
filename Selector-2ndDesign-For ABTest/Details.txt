@@ -1,0 +1,2 @@
+This is the 2nd version of design where we are changing the whole product selector and how it is structured. 
+Basically 7 Main questions instead of 11 like previous version and one slide for accessories only. 
