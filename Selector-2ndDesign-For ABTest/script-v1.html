@@ -1,0 +1,1380 @@
+<script>
+    const quizData = {
+        "meta": {
+            "version": "2.0",
+            "currency": "USD",
+            "company": "SonderCare"
+        },
+        "questions": [
+            {
+                "id": "q1",
+                "type": "single select",
+                "question": "Which bed width is preferred?",
+                "image": "https://www.sondermirror.com/wp-content/uploads/2026/02/Question-1.png",
+                "qinfo": "Basic hospital beds are 36\" wide. The 39\" SonderCare standard width is great for users who are comfortable in smaller sleeping areas, don't move a lot during sleep, or who have smaller rooms. The 48\" width is ideal for larger users, anyone who tends to move through the night or is accustomed to larger bed sizes.Aura™ Companion bed (78\") serves perfectly as a generous king-size hospital bed for individual use or converts into a split-king setup—ideal for couples with distinct care needs who still wish to sleep side by side.",
+                "options": [
+                    {
+                        "id": "39",
+                        "label": "39\" Twin XL",
+                        "size": "39",
+                        "price": "6,999"
+                    },
+                    {
+                        "id": "48",
+                        "label": "48\" Wide",
+                        "size": "48",
+                        "price": "8,999"
+                    },
+                    {
+                        "id": "78",
+                        "label": "78\" Split King",
+                        "size": "78(King)",
+                        "price": "11,999"
+                    }
+                ]
+            },
+            {
+                "id": "q2-bed",
+                "type": "single select",
+                "question": "Which finish do you prefer?",
+                "showIf": "No-KingBed-selected",
+                "image": "https://www.sondermirror.com/wp-content/uploads/2026/05/New-Finish-Image.png",
+                "qinfo": "Choose Standard Espresso woodgrain or upgraded Slate Gray fabric (fluid-proof, stain and odor-resistant). Both finishes look warm and inviting. Select the option that best suits the user and the room décor.",
+                "options": [
+                    {
+                        "id": "premium",
+                        "label": "Woodgrain",
+                        "SelectedBed": "Premium",
+                        "price": [
+                            {
+                                "Premium-39": "0"
+                            },
+                            {
+                                "Premium-48": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "platinum",
+                        "label": "Upholstered",
+                        "SelectedBed": "Platinum",
+                        "price": [
+                            {
+                                "Platinum-39": "1,500"
+                            },
+                            {
+                                "Platinum-48": "2,000"
+                            }
+                        ]
+                    }
+                ]
+
+            },
+            {
+                "id": "q2-headboard",
+                "type": "single select",
+                "question": "Which finish do you prefer?",
+                "showIf": "KingBed-selected",
+                "image": "https://www.sondermirror.com/wp-content/uploads/2026/02/Question-2-B.png",
+                "qinfo": "Full-width upholstered headboard is available in choice of two luxurious styles: rectangular Graphite Gray with clean, square tufting or arched Silverstone with nailhead finish.",
+                "options": [
+                    {
+                        "id": "grey-headboard",
+                        "label": "Graphite gray",
+                        "price": "0"
+                    },
+                    {
+                        "id": "offwhite-headboard",
+                        "label": "Silverstone",
+                        "price": "0"
+                    }
+                ]
+
+            },
+            {
+                "id": "q3",
+                "type": "single select",
+                "question": "Which mattress do you prefer?",
+                "qinfo": "Choose from our wide variety of pressure reducing mattresses to cater your specific needs:<ul><li><b>Comfort</b> — Standard Pressure Redistribution Mattress designed for basic comfort and contouring. Visco Memory Foam Top Layer allows immersion into the foam. Ideal for users that typically require assistance to move and reposition in bed and during transfers. </li><li><b>Dream</b> — Premium Pressure Redistribution Mattress designed for customized comfort and support. Bamboo Quilt Top for Easier Repositioning. Reversible with Soft & Firm Sides. Ideal for users that want the clinical benefits of pressure reduction and the feel of a luxury home-style mattress.</li><li><b>Signature Hybrid</b> — Individual pocket coil mattress with orthopedic foam to adjust to body movement and provide ultimate support and relief. Copper-infused cover. Reversible with Soft & Firm sides. Ideal for users who want the best combination of comfort and support that only a hybrid foam and inner spring mattress can provide.</li><li><b>Air</b> — Alternating Pressure / Low-Air-Loss mattress is designed to effectively treat wounds and pressure sores, not as a comfort mattress. Ideal for users at high risk of developing wounds, bed sores, pressure ulcers. Speak with a medical professional prior to using this mattress.</li></ul>",
+                "image": [
+                    {
+                        "showIf": "bed size is 39 or 78",
+                        "img-url": "https://www.sondermirror.com/wp-content/uploads/2026/02/Question-5-all-4-1-1.png"
+                    },
+                    {
+                        "showIf": "bed size 48",
+                        "img-url": "https://www.sondermirror.com/wp-content/uploads/2026/02/Question-5-no-comfort-1.png"
+                    }
+                ],
+                "options": [
+                    {
+                        "id": "comfort-mattress",
+                        "label": "Comfort",
+                        "availability": ["39", "78"],
+                        "prices": {
+                            "39": "899",
+                            "78": "1,799"
+                        }
+                    },
+                    {
+                        "id": "dream-mattress",
+                        "label": "Dream",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "1,299",
+                            "48": "1,499",
+                            "78": "2,599"
+                        }
+                    },
+                    {
+                        "id": "hybrid-mattress",
+                        "label": "Signature Hybrid",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "1,799",
+                            "48": "1,999",
+                            "78": "3,599"
+                        }
+                    },
+                    {
+                        "id": "air-mattress",
+                        "label": "Air",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "2,999",
+                            "48": "3,999",
+                            "78": "5,999"
+                        }
+                    },
+                    {
+                        "id": "none",
+                        "label": "No mattress required",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "0",
+                            "48": "0",
+                            "78": "0"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "q4",
+                "type": "single select",
+                "question": "How do you prefer delivery?",
+                "image": "https://www.sondermirror.com/wp-content/uploads/2026/05/New-delivery-Image.png",
+                "qinfo": "Most of our clients prefer White Glove which will includes <b>Delivery and Installation</b>, where our team will schedule our arrival, deliver the bed to your desired room, fully-set up the bed, remove all packaging and provide a brief demonstration of the operation.<br/>We also know that emergency situations sometimes occur, so if you need a bed delivered urgently, we have Rush and Expedited options for our White Glove deliveries.Regardless of the selection you make, your delivery will always be coordinated for a time window that works for you.<br/>Occasionally, some customers will choose to pick up with their own vehicle and personnel or just have the bed dropped on a pallet at their driveway or dock.<br/> Guaranteed delivery timeframes are business days.",
+                "options": [
+                    {
+                        "id": "standard",
+                        "label": "Standard White Glove<br/><span style=\"font-size:12px;font-weight:400;\">Delivery & Installation: 10-21 Business Days</span>",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "599",
+                            "48": "599",
+                            "78": "899"
+                        }
+                    },
+                    {
+                        "id": "expedited",
+                        "label": "Expedited White Glove<br/><span style=\"font-size:12px;font-weight:400;\">Delivery & Installation: 4-9 Business Days</span>",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "899",
+                            "48": "899",
+                            "78": "1,299"
+                        }
+                    },
+                    {
+                        "id": "rush",
+                        "label": "Rush White Glove<br/><span style=\"font-size:12px;font-weight:400;\">Delivery & Installation: 1-3 Business Days</span>",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "1,199",
+                            "48": "1,199",
+                            "78": "1,699"
+                        }
+                    },
+                    {
+                        "id": "drop-ship",
+                        "label": "Drop ship<br/><span style=\"font-size:12px;font-weight:400;\">No Installation- Delivery to Driveway Only</span>",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "449",
+                            "48": "449",
+                            "78": "799"
+                        }
+                    },
+                    {
+                        "id": "pickup",
+                        "label": "Pick-up<br/><span style=\"font-size:12px;font-weight:400;\">At Regional Warehouse</span>",
+                        "price": "0"
+                    }
+                ]
+            },
+            {
+                "id": "q5",
+                "type": "single select",
+                "question": "Add Any Warranty?",
+                "image": "https://www.sondermirror.com/wp-content/uploads/2026/03/Question-12.png",
+                "qinfo": " All SonderCare beds come with a full 5-year comprehensive parts warranty. Many of our clients prefer to add the corresponding 5-year labor coverage to perform any required service work. All repairs and troubleshooting will be completed by a SonderCare authorized service technician.",
+                "options": [
+                    {
+                        "id": "5year-only-parts",
+                        "label": "5 Year Standard Warranty<br/><span style=\"font-size:12px;font-weight:400;\">Parts Only - No Labor Included</span>",
+                        "price": "0"
+
+                    },
+                    {
+                        "id": "5year-parts-and-labor",
+                        "label": "5 Year Premium Warranty<br/><span style=\"font-size:12px;font-weight:400;\">All Parts & Labor Included</span>",
+                        "price": "199"
+                    }
+                ]
+            },
+            {
+                "id": "q6",
+                "type": "multi",
+                "question": "Add any optional accessories?",
+                "image": "",
+                "qinfo": "<ul><li><b>Additional Rails</b> — Standard bed is outfitted with one rail per side. For extra coverage, add an additional rail set for a total of four rails.</li><li><b>Helper Bar</b> — Overhead Trapeze Helper Bar assists with turning and repositioning in bed.</li><li><b>Reading Light </b> — Mounts to either side of the headboard and is flexible to provide easy positioning. Switch is conveniently located on the lamp head.</li><li><b>Auto Nightlight</b> — Nightlight can be placed on either side of the bed and illuminates when sensing motion.</li><li><b>Battery Back-Up</b> &mdash; Portable back-up battery provides emergency power in case of outage.</li><li><b>Rail Pads</b> &mdash; Set of 2 rail pads slide over the rails to add cushioning for users who accidentally bump against them while in bed.</li><li><b>Rail Organizer</b> &mdash; 3-pocket design helps to keep often-used items like glasses, remotes and reading material within easy reach.</li><li><b>Overbed Table</b> &mdash; The Extra Large Overbed Table (18\" x 36\") provides a convenient surface for eating or other daily activities.</li><li><b>Extension Kit</b> &mdash; Adds 8\" of length to the existing 79\" mattress. Recommended for users taller than 6'2.</li></ul>",
+                "options": [
+                    {
+                        "id": "rails",
+                        "label": "Additional Rails<br/><span style=\"font-size:12px;font-weight:400;\">Add extra pair for total of 4 rails on bed</span>",
+                        "price": "594"
+                    },
+                    {
+                        "id": "bar",
+                        "label": "Helper Bar<br/><span style=\"font-size:12px;font-weight:400;\">Assists with repositioning in bed</span>",
+                        "price": "369"
+                    },
+                    {
+                        "id": "light",
+                        "label": "Reading Light<br/><span style=\"font-size:12px;font-weight:400;\">Convenient light with flexible arm</span>",
+                        "availability": ["39", "48"],
+                        "prices": {
+                            "39": "179",
+                            "48": "179"
+                        }
+                    },
+                    {
+                        "id": "nightlight",
+                        "label": "Auto Nightlight<br/><span style=\"font-size:12px;font-weight:400;\">Motion sensor auto-illuminates floor</span>",
+                        "availability": ["39", "48"],
+                        "prices": {
+                            "39": "219",
+                            "48": "219"
+                        }
+                    },
+                    {
+                        "id": "battery-backup",
+                        "label": "Battery Back-Up<br/><span style=\"font-size:12px;font-weight:400;\">Emergency power in case of outage</span>",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "149",
+                            "48": "149",
+                            "78": "279"
+                        }
+                    },
+                    {
+                        "id": "pads",
+                        "label": "Rail Pads (pair)<br/><span style=\"font-size:12px;font-weight:400;\">Slide over rails for extra cushioning</span>",
+                        "price": "198"
+                    },
+                    {
+                        "id": "organizer",
+                        "label": "Rail Organizer<br/><span style=\"font-size:12px;font-weight:400;\">Keep often used items within reach</span>",
+                        "price": "89"
+                    },
+                    {
+                        "id": "table",
+                        "label": "Overbed Table<br/><span style=\"font-size:12px;font-weight:400;\">Extra large surface for eating/activities</span>",
+                        "price": "789"
+                    },
+                    {
+                        "id": "extension-kit",
+                        "label": "Extension Kit<br/><span style=\"font-size:12px;font-weight:400;\">Adds 8\" of length for taller users</span>",
+                        "price": "449"
+                    },
+                    {
+                        "id": "none",
+                        "label": "No Accessories Required",
+                        "price": "0"
+                    }
+                ]
+            },
+            {
+                "id": "q7",
+                "type": "multi",
+                "question": "Add any premium bedding?",
+                "image": [
+                    {
+                        "showIf": "bed size is 39 or 78",
+                        "img-url": "https://www.sondermirror.com/wp-content/uploads/2026/03/Question-9-all-4.png"
+                    },
+                    {
+                        "showIf": "bed size 48",
+                        "img-url": "https://www.sondermirror.com/wp-content/uploads/2026/03/Question-9-for-48.png"
+                    }
+                ],
+                "qinfo": "Premium bedding designed for comfort and durability. Microfiber or cotton sheets including fitted sheet, flat sheet and pillowcases, the Heavenly Pillow provides optimal support, and Duvet and cover set completes your bed setup.",
+                "options": [
+                    {
+                        "id": "microfiber-sheets",
+                        "label": "Microfiber Sheets",
+                        "availability": ["39"],
+                        "prices": {
+                            "39": "99"
+                        }
+                    },
+                    {
+                        "id": "cotton-sheets",
+                        "label": "Cotton sheets",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "169",
+                            "48": "199",
+                            "78": "269"
+                        }
+                    },
+                    {
+                        "id": "heavenly-pillow",
+                        "label": "Heavenly pillow",
+                        "price": "189"
+                    },
+                    {
+                        "id": "duvet-&-duvetcover",
+                        "label": "Duvet and cover",
+                        "availability": ["39", "48", "78"],
+                        "prices": {
+                            "39": "469",
+                            "48": "529",
+                            "78": "619"
+                        }
+                    },
+                    {
+                        "id": "none",
+                        "label": "No Bedding Required",
+                        "price": "0"
+                    }
+                ]
+
+            }
+        ]
+    };
+
+    // State management
+    const state = {
+        currentQuestionIndex: 0,
+        answers: {},
+        visibleQuestions: [],
+        contactType: null,
+        selectedBedSize: null,
+        quoteNumber: null
+    };
+
+    // DOM Elements
+    const quizContainer = document.getElementById('quizContainer');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const navigationContainer = document.getElementById('navigationContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    document.querySelector('#navigationContainer').style.display = 'none';
+
+    // Initialize the quiz
+    function initQuiz() {
+        // Fire Quiz Started goals (Matomo + RedTrack)
+        // try { if (typeof window.handleQuizStarted === 'function') window.handleQuizStarted(); } catch (e) { }
+        // try { if (typeof window.handleQuizStartedRT === 'function') window.handleQuizStartedRT(); } catch (e) { }
+
+        const introContainer = document.querySelector('.beforeQuizStarts-container');
+        introContainer.classList.add('fade-out');
+
+        setTimeout(() => {
+            const navContainer = document.querySelector('#navigationContainer');
+            navContainer.style.display = 'flex';
+            navContainer.style.opacity = '0';
+            setTimeout(() => {
+                navContainer.style.transition = 'opacity 0.5s ease-in';
+                navContainer.style.opacity = '1';
+            }, 50);
+
+            // document.querySelector('.showUpForQuiz').style.display = 'block';
+
+            let firstSentence = document.querySelectorAll('.hideForQuiz');
+            firstSentence.forEach(item => {
+                item.style.display = 'none';
+            });
+
+            buildVisibleQuestionsList();
+            renderQuestion(state.currentQuestionIndex, true);
+            updateNavigationButtons();
+
+            prevBtn.addEventListener('click', goToPreviousQuestion);
+            nextBtn.addEventListener('click', goToNextQuestion);
+
+            const contactOptions = document.querySelectorAll('.contact-option');
+            contactOptions.forEach(option => {
+                option.addEventListener('click', handleContactOptionClick);
+            });
+
+            document.getElementById('submitEmail').addEventListener('click', handleEmailSubmit);
+            document.getElementById('submitPhone').addEventListener('click', handlePhoneSubmit);
+        }, 500);
+    }
+
+    function buildVisibleQuestionsList() {
+        state.visibleQuestions = [];
+        quizData.questions.forEach((question, index) => {
+            if (shouldShowQuestion(question)) {
+                state.visibleQuestions.push(index);
+            }
+        });
+    }
+
+    function shouldShowQuestion(question) {
+        if (!question.showIf) return true;
+        const q1Answer = state.answers['q1'];
+        if (question.showIf === 'No-KingBed-selected') {
+            return q1Answer && q1Answer !== '78';
+        }
+        if (question.showIf === 'KingBed-selected') {
+            return q1Answer === '78';
+        }
+        return true;
+    }
+
+    function getSelectedBedSize() {
+        const q1Answer = state.answers['q1'];
+        if (!q1Answer) return null;
+        const q1 = quizData.questions.find(q => q.id === 'q1');
+        const selectedOption = q1.options.find(opt => opt.id === q1Answer);
+        return selectedOption ? selectedOption.size : null;
+    }
+
+    // ✅ NEW: Check if option should be shown based on bed size availability
+    function shouldShowOption(option, question) {
+        const bedSize = getSelectedBedSize();
+
+        // If no bed size selected yet, show all options
+        if (!bedSize) return true;
+
+        // Clean bed size (remove "(King)" suffix)
+        const cleanBedSize = bedSize.replace('(King)', '');
+
+        // Check availability array (new format)
+        if (option.availability && Array.isArray(option.availability)) {
+            return option.availability.includes(cleanBedSize);
+        }
+
+        // If no availability specified, show the option
+        return true;
+    }
+
+    // ✅ NEW: Get price for an option based on bed size
+    function getOptionPrice(option) {
+
+        const bedSize = getSelectedBedSize();
+        const cleanBedSize = bedSize ? bedSize.replace('(King)', '') : null;
+
+        // Fixed/simple prices
+        if (option.price && typeof option.price === 'string') {
+            return option.price;
+        }
+
+        // New format: prices object
+        if (option.prices && typeof option.prices === 'object' && cleanBedSize) {
+            return option.prices[cleanBedSize] || null;
+        }
+
+        // Old q2-bed format
+        if (Array.isArray(option.price) && cleanBedSize) {
+            for (let priceObj of option.price) {
+                for (let key in priceObj) {
+                    if (key.includes(cleanBedSize)) {
+                        return priceObj[key];
+                    }
+                }
+            }
+        }
+
+        // PriceCondition support
+        if (option.PriceCondition && cleanBedSize) {
+
+            const match = option.PriceCondition.find(item => {
+                return item.ShowforBedSize.includes(cleanBedSize);
+            });
+
+            return match ? match.price : null;
+        }
+
+        // showUpFor support
+        if (option.showUpFor && cleanBedSize) {
+
+            const match = option.showUpFor.find(item => {
+                return item.bedSize === cleanBedSize;
+            });
+
+            return match ? match.price : null;
+        }
+
+        return null;
+    }
+
+    function getCurrentQuestionImage(question) {
+        if (Array.isArray(question.image)) {
+            const bedSize = getSelectedBedSize();
+            const cleanBedSize = bedSize ? bedSize.replace('(King)', '') : '';
+
+            for (let imageCondition of question.image) {
+                const condition = imageCondition.showIf.toLowerCase();
+
+                if (condition.includes('39 or 78') || condition.includes('39 or 48')) {
+                    const sizes = condition.match(/\d+/g);
+                    if (sizes && sizes.includes(cleanBedSize)) {
+                        return imageCondition['img-url'];
+                    }
+                } else if (condition.includes('48') && cleanBedSize === '48') {
+                    return imageCondition['img-url'];
+                } else if (condition.includes('78') && cleanBedSize === '78') {
+                    return imageCondition['img-url'];
+                } else if (condition.includes('39') && cleanBedSize === '39') {
+                    return imageCondition['img-url'];
+                }
+            }
+            return question.image[0] ? question.image[0]['img-url'] : '';
+        }
+
+        if (typeof question.image === 'string') {
+            return question.image;
+        }
+
+        return '';
+    }
+
+    function checkQuestionInfoHeight(questionId) {
+        const infoElement = document.getElementById(`qinfo-${questionId}`);
+        const toggleButton = document.getElementById(`toggle-${questionId}`);
+        if (!infoElement || !toggleButton) return;
+
+        infoElement.classList.remove('collapsed');
+        const actualHeight = infoElement.scrollHeight;
+        const lineHeight = parseFloat(getComputedStyle(infoElement).lineHeight);
+
+        if (actualHeight > (lineHeight * 1.2)) {
+            toggleButton.style.display = 'inline';
+            infoElement.classList.add('collapsed');
+        } else {
+            toggleButton.style.display = 'none';
+            infoElement.classList.remove('collapsed');
+        }
+    }
+
+    // ✅ UPDATED: Render question with prices displayed
+    function renderQuestion(visibleIndex, isFirstQuestion = false) {
+        const actualIndex = state.visibleQuestions[visibleIndex];
+        const question = quizData.questions[actualIndex];
+        if (!question) return;
+
+        const currentCard = quizContainer.querySelector('.question-card.active');
+        if (currentCard && !isFirstQuestion) {
+            currentCard.style.opacity = '0';
+            currentCard.style.transform = 'translateY(-10px)';
+        }
+
+        setTimeout(() => {
+            const questionImage = getCurrentQuestionImage(question);
+            const questionNumber = visibleIndex + 1;
+            const totalQuestions = state.visibleQuestions.length;
+            // <div class="question-counter">Question ${questionNumber} of ${totalQuestions}</div>
+
+            const questionTitle = document.querySelector('.question-counter');
+            questionTitle.innerHTML = `Question ${questionNumber} of ${totalQuestions}`;
+            let html = `
+        <div class="question-card active ${isFirstQuestion ? 'fade-in-first' : ''}" data-question-id="${question.id}" style="opacity: 0; transform: translateY(10px);">
+            <div class="question-header">
+                <h2 class="question-title">${question.question}</h2>
+                ${questionImage ? `<img src="${questionImage}" alt="Question image" class="question-image" onerror="this.style.display='none'" id="question-image-${question.id}">` : ''}
+                ${question.qinfo ? `<div class="question-info-wrapper">
+                    <div class="question-info collapsed" id="qinfo-${question.id}">${question.qinfo}</div>
+                    <span class="see-more-toggle" id="toggle-${question.id}" onclick="toggleQuestionInfo('${question.id}')" style="display: none;">More</span>
+                </div>` : ''}
+            </div>
+            <div class="options-container">
+    `;
+
+            const isMultiSelect = question.type === 'multi';
+            const inputType = isMultiSelect ? 'checkbox' : 'radio';
+            const inputName = question.id;
+            question.isMultiSelect = isMultiSelect;
+
+            let visibleOptions = question.options.filter(opt => shouldShowOption(opt, question));
+
+            visibleOptions.forEach(option => {
+                const isChecked = isMultiSelect
+                    ? (state.answers[question.id] && state.answers[question.id].includes(option.id))
+                    : (state.answers[question.id] === option.id);
+
+                // ✅ Get price for display
+                const price = getOptionPrice(option);
+                const priceDisplay = price && price !== '0' ? ` - $${price}` : (price === '0' ? ' - $0' : '');
+
+                html += `
+        <div class="option-item">
+            <input 
+                type="${inputType}" 
+                id="${option.id}" 
+                name="${inputName}" 
+                value="${option.id}"
+                ${isChecked ? 'checked' : ''}
+                onchange="handleOptionChange('${question.id}', '${option.id}', ${isMultiSelect})">
+            <label for="${option.id}" class="option-label">
+    <div class="option-content">
+
+        <span class="option-text">
+            ${option.label}
+        </span>
+
+        ${getOptionPrice(option)
+                        ? `<span class="option-price">$${getOptionPrice(option)}</span>`
+                        : ''
+                    }
+
+    </div>
+</label>
+        </div>
+    `;
+            });
+
+            html += `
+            </div>
+        </div>
+    `;
+
+            quizContainer.innerHTML = html;
+
+            setTimeout(() => {
+                const newCard = quizContainer.querySelector('.question-card');
+                if (newCard) {
+                    newCard.style.transition = 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out';
+                    newCard.style.opacity = '1';
+                    newCard.style.transform = 'translateY(0)';
+                }
+            }, 100);
+
+            setTimeout(() => checkQuestionInfoHeight(question.id), 100);
+
+            setTimeout(() => {
+                updateNavigationButtons();
+            }, 100);
+
+        }, isFirstQuestion ? 0 : 150);
+    }
+
+    function handleOptionChange(questionId, optionId, isMultiSelect) {
+        if (isMultiSelect) {
+            if (!state.answers[questionId]) {
+                state.answers[questionId] = [];
+            }
+
+            // Handle "none" option
+            if (optionId === 'none') {
+                if (state.answers[questionId].includes('none')) {
+                    // Deselect none
+                    state.answers[questionId] = state.answers[questionId].filter(id => id !== 'none');
+                } else {
+                    // Select none and clear all other selections
+                    state.answers[questionId] = ['none'];
+                    // Uncheck all other checkboxes
+                    const inputs = document.querySelectorAll(`input[name="${questionId}"]`);
+                    inputs.forEach(input => {
+                        if (input.value !== 'none') {
+                            input.checked = false;
+                        }
+                    });
+                }
+            } else {
+                // Regular option selected - remove 'none' if it was selected
+                state.answers[questionId] = state.answers[questionId].filter(id => id !== 'none');
+
+                const index = state.answers[questionId].indexOf(optionId);
+                if (index > -1) {
+                    state.answers[questionId].splice(index, 1);
+                } else {
+                    state.answers[questionId].push(optionId);
+                }
+
+                // Uncheck 'none' checkbox
+                const noneInput = document.querySelector(`input[name="${questionId}"][value="none"]`);
+                if (noneInput) noneInput.checked = false;
+            }
+        } else {
+            state.answers[questionId] = optionId;
+
+            if (questionId === 'q1') {
+                state.selectedBedSize = getSelectedBedSize();
+                buildVisibleQuestionsList();
+                updateConditionalImages();
+            }
+        }
+
+        updateNavigationButtons();
+    }
+
+    function updateConditionalImages() {
+        const actualIndex = state.visibleQuestions[state.currentQuestionIndex];
+        const question = quizData.questions[actualIndex];
+        const imageElement = document.getElementById(`question-image-${question.id}`);
+        if (!imageElement) return;
+
+        const newImage = getCurrentQuestionImage(question);
+        if (newImage && newImage !== imageElement.src) {
+            imageElement.src = newImage;
+        }
+    }
+
+    function goToNextQuestion() {
+        const actualIndex = state.visibleQuestions[state.currentQuestionIndex];
+        const currentQuestion = quizData.questions[actualIndex];
+
+        if (!isQuestionAnswered(currentQuestion)) {
+            alert('Please select an option before continuing.');
+            return;
+        }
+
+        if (state.currentQuestionIndex >= state.visibleQuestions.length - 1) {
+            showResults();
+            return;
+        }
+
+        state.currentQuestionIndex++;
+
+        // Fire Quiz 50% goal when passing the midpoint
+        var halfwayPoint = Math.floor(state.visibleQuestions.length / 2);
+        if (state.currentQuestionIndex === halfwayPoint) {
+            try { if (typeof window.handleQuizHalf === 'function') window.handleQuizHalf(); } catch (e) { }
+            try { if (typeof window.handleQuizHalfRT === 'function') window.handleQuizHalfRT(); } catch (e) { }
+        }
+
+        renderQuestion(state.currentQuestionIndex);
+        updateNavigationButtons();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToPreviousQuestion() {
+        if (state.currentQuestionIndex <= 0) return;
+
+        state.currentQuestionIndex--;
+        renderQuestion(state.currentQuestionIndex);
+        updateNavigationButtons();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function isQuestionAnswered(question) {
+        const answer = state.answers[question.id];
+
+        if (question.isMultiSelect) {
+            return answer !== undefined && Array.isArray(answer) && answer.length > 0;
+        } else {
+            return answer && answer !== '';
+        }
+    }
+
+    function updateNavigationButtons() {
+        prevBtn.disabled = state.currentQuestionIndex === 0;
+
+        const actualIndex = state.visibleQuestions[state.currentQuestionIndex];
+        const currentQuestion = quizData.questions[actualIndex];
+        const isAnswered = isQuestionAnswered(currentQuestion);
+
+        nextBtn.disabled = !isAnswered;
+
+        if (state.currentQuestionIndex >= state.visibleQuestions.length - 1) {
+            nextBtn.textContent = 'Finish →';
+        } else {
+            nextBtn.innerHTML = 'Next <i class="fas fa-chevron-right"></i>';
+        }
+    }
+
+    function toggleQuestionInfo(questionId) {
+        const infoElement = document.getElementById(`qinfo-${questionId}`);
+        const toggleButton = document.getElementById(`toggle-${questionId}`);
+
+        if (infoElement.classList.contains('collapsed')) {
+            infoElement.classList.remove('collapsed');
+            infoElement.classList.add('expanded');
+            toggleButton.innerHTML = 'Less';
+        } else {
+            infoElement.classList.remove('expanded');
+            infoElement.classList.add('collapsed');
+            toggleButton.innerHTML = 'More';
+        }
+    }
+
+function generateQuoteNumber() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    // 4-digit random number (1000–9999)
+    const random = Math.floor(Math.random() * 9000) + 1000;
+
+    return `SC-${year}${month}${day}-${random}`;
+}
+    const showResults = () => {
+        // Fire Quiz Completed goals (Matomo + RedTrack)
+        // try { if (typeof window.handleQuizCompleted === 'function') window.handleQuizCompleted(); } catch (e) { }
+        // try { if (typeof window.handleQuizCompletedRT === 'function') window.handleQuizCompletedRT(); } catch (e) { }
+
+        if (!state.quoteNumber) {
+            state.quoteNumber = generateQuoteNumber();
+        }
+
+        // document.querySelector('.showUpForQuiz').innerHTML = 'Quiz Results';
+        navigationContainer.style.display = 'none';
+        quizContainer.style.display = "none";
+        document.querySelector('.question-counter').innerHTML = 'Quiz Results!';
+        const contactFormHTML = `
+        <div class="pre-results-text">
+            <p>Please enter your email, phone and delivery location and your results will display below. <br/>Our bed experts can help you adjust your quote or find a different bed package that suits your needs. We're ready anytime at 1-833-649-7772.</p>
+        </div>
+
+        <div id="pre-results-contact-form">
+            <form id="contact-before-results-form">
+                <div style="margin-bottom: 20px;">
+                    <label>
+                        Phone Number <span class="mandatory-icon">*</span>
+                    </label>
+                    <input type="tel" id="pre-phone" placeholder="(555) 123-4567" required>
+                </div>
+                
+                <div style="margin-bottom: 25px;">
+                    <label>
+                        Delivery location <span class="mandatory-icon">*</span>
+                    </label>
+                    <input type="text" id="pre-postal" placeholder="Zip Code / Postal Code" required>
+                </div>
+                <div>
+                    <label>Email <span class="mandatory-icon">*</span></label>
+                    <input type="email" id="pre-email" placeholder="your.email@example.com">
+                </div>
+                <button type="submit">See My Results ↓</button>
+            </form>
+        </div>
+    `;
+
+        resultsContainer.innerHTML = contactFormHTML;
+        resultsContainer.style.display = "block";
+
+        document.getElementById("contact-before-results-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("pre-email").value.trim();
+            const phone = document.getElementById("pre-phone").value.trim();
+            const postalCode = document.getElementById("pre-postal").value.trim();
+
+            if (!phone) {
+                alert("Please enter your phone number.");
+                return;
+            }
+
+            if (!email) {
+                alert("Please enter your email address.");
+                return;
+            }
+
+            if (!postalCode) {
+                alert("Please enter your postal code.");
+                return;
+            }
+
+            saveQuoteToDatabase(email, phone, postalCode);
+
+            resultsContainer.innerHTML = `
+            <p class="results-title">Based on your responses, the following is your preferred SonderCare Bed Package! <br/>
+If you want to make any changes or if the bed package below doesn't suit your needs, just call our bed experts and we'll work to create your perfect bed at the right price.</p>
+            <div class="results-summary" id="resultsSummary"></div>
+            
+            <h3 class="form-title">How would you like to proceed?</h3>
+            <div class="contact-options">
+                <div class="contact-option" data-contact-type="email">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <div class="contact-title">Email Quote</div>
+                        <div class="contact-desc">Receive a detailed quote via email</div>    
+                    </div>
+
+                </div>
+                <div class="contact-option" data-contact-type="phone">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <div class="contact-title">Speak to Expert</div>
+                        <div class="contact-desc">Have a bed expert call you</div>    
+                    </div>
+                </div>
+                 <div class="contact-option" id="call-expert">
+                <div class="contact-icon"><img src="https://www.sondermirror.com/wp-content/uploads/2026/05/customer-service-icon.png" class=""/></div>
+                    <div>
+                        <div class="contact-title">Speak to an Expert Now</div>
+                        <div class="contact-desc">Order your bed or find a different solutions<br/> Call us at <b>1-833-649-7772</b>. We're ready for you!</div>    
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="contact-form" id="emailForm">
+                <h3 style="color: #25385b; margin-bottom: 20px;">Enter your email</h3>
+                <div class="form-group">
+                    <label for="emailInput">Email Address *</label>
+                    <input type="email" id="emailInput" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Name *</label>
+                    <input type="text" id="nameInput" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="notesInput">Additional notes (optional)</label>
+                    <textarea id="notesInput" rows="4" placeholder="Any special requirements or questions..."></textarea>
+                </div>
+                <button class="submit-button" id="submitEmail">Send Me the Quote</button>
+            </div>
+            
+            <div class="contact-form" id="phoneForm">
+                <h3 style="color: #25385b; margin-bottom: 20px;">Enter your contact details</h3>
+                <div class="form-group">
+                    <label for="phoneNameInput">Name *</label>
+                    <input type="text" id="phoneNameInput" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNotesInput">Additional notes (optional)</label>
+                    <textarea id="phoneNotesInput" rows="4" placeholder="Any special requirements or questions..."></textarea>
+                </div>
+                <button class="submit-button" id="submitPhone">Request a Call</button>
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                <h3>Thank you! 🎉</h3>
+                <p>We've received your information and will get back to you shortly.</p>
+            </div>
+        `;
+
+            // code for 3rd contact box
+
+            const callExpert = document.querySelector('#call-expert');
+            callExpert.addEventListener("click", function () {
+                window.location.href = 'tel:18336497772';
+            });
+
+            const contactOptions = document.querySelectorAll('.contact-option');
+            contactOptions.forEach(option => {
+                option.addEventListener('click', handleContactOptionClick);
+            });
+
+            document.getElementById('submitEmail').addEventListener('click', handleEmailSubmit);
+            document.getElementById('submitPhone').addEventListener('click', handlePhoneSubmit);
+
+            generateResultsSummary();
+
+            setTimeout(() => {
+                const quoteElement = document.getElementById('resultsSummary');
+                if (quoteElement) {
+                    quoteElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 800);
+        });
+    };
+
+    function calculateTotalPrice() {
+        let totalPrice = 0;
+
+        state.visibleQuestions.forEach(questionIndex => {
+            const question = quizData.questions[questionIndex];
+            const answer = state.answers[question.id];
+
+            if (Array.isArray(answer) && answer.length > 0) {
+                answer.forEach((id) => {
+                    // Skip 'none' option
+                    if (id === 'none') return;
+
+                    const option = question.options.find(opt => opt.id === id);
+                    if (option) {
+                        const price = getOptionPrice(option);
+                        const priceNum = price !== null && price !== undefined ? parseFloat(price.replace(/,/g, '')) : 0;
+                        totalPrice += priceNum;
+                    }
+                });
+            } else if (answer && !Array.isArray(answer)) {
+                // Skip 'none' option
+                if (answer === 'none') return;
+
+                const option = question.options.find(opt => opt.id === answer);
+                if (option) {
+                    let price = getOptionPrice(option);
+
+                    // Special handling for q1 + q2 combination
+                    if (question.id === 'q1') {
+                        if (state.answers['q2-bed']) {
+                            const q2bed = quizData.questions.find(q => q.id === 'q2-bed');
+                            const bedOption = q2bed?.options.find(opt => opt.id === state.answers['q2-bed']);
+                            if (bedOption) {
+                                const bedPrice = getOptionPrice(bedOption);
+                                const q1Price = getOptionPrice(option);
+                                // For Premium finish (price = 0), use q1 price; for Platinum, add upgrade cost
+                                if (bedPrice && bedPrice !== '0') {
+                                    const q1Num = q1Price ? parseFloat(q1Price.replace(/,/g, '')) : 0;
+                                    const upgradeNum = parseFloat(bedPrice.replace(/,/g, ''));
+                                    price = (q1Num + upgradeNum).toString();
+                                }
+                            }
+                        } else if (state.answers['q2-headboard']) {
+                            const q2headboard = quizData.questions.find(q => q.id === 'q2-headboard');
+                            const headboardOption = q2headboard?.options.find(opt => opt.id === state.answers['q2-headboard']);
+                            if (headboardOption) {
+                                price = getOptionPrice(option); // Keep q1 price for Split King
+                            }
+                        }
+                    } else if (question.id === 'q2-bed' || question.id === 'q2-headboard') {
+                        // Don't add q2 price separately, it's handled in q1
+                        price = null;
+                    }
+
+                    if (price !== null && price !== undefined && price !== '0') {
+                        const priceNum = parseFloat(price.replace(/,/g, ''));
+                        totalPrice += priceNum;
+                    }
+                }
+            }
+        });
+
+        return totalPrice;
+    }
+
+    function saveQuoteToDatabase(email = '', phone = '', postalCode = '') {
+        const subtotal = calculateTotalPrice();
+
+        const quoteData = {
+            quoteNumber: state.quoteNumber,
+            answers: state.answers,
+            bedSize: state.answers.q1,
+            subtotal: subtotal,
+            email: email,
+            phone: phone,
+            postalCode: postalCode
+        };
+
+        const formData = new FormData();
+        formData.append('action', 'save_quote');
+        formData.append('data', JSON.stringify(quoteData));
+
+        fetch('/wp-admin/admin-ajax.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Quote saved successfully');
+                } else {
+                    console.error('Failed to save quote');
+                }
+            })
+            .catch(error => {
+                console.error('Error saving quote:', error);
+            });
+    }
+
+    function generateResultsSummary() {
+        const summaryContainer = document.getElementById('resultsSummary');
+        let html = `<h3 class="quote-number-text">Quote Number: ${state.quoteNumber}</h3>`;
+
+        html += `
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5; border-bottom: 2px solid #25385b;">
+                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #25385b;font-size:1.15rem;">Item</th>
+                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #25385b;font-size:1.15rem;">Selection</th>
+                    <th style="padding: 12px; text-align: right; font-weight: 600; color: #25385b;font-size:1.15rem;">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+        let totalPrice = 0;
+
+        state.visibleQuestions.forEach(questionIndex => {
+            const question = quizData.questions[questionIndex];
+            const answer = state.answers[question.id];
+
+            // Handle "none" option for single select
+            if (answer === 'none' && !question.isMultiSelect) {
+                html += `
+                <tr style="border-bottom: 1px solid #e0e0e0;">
+                    <td style="padding: 12px; color: #666;">${question.question}</td>
+                    <td style="padding: 12px; font-weight: 500;">None Required</td>
+                    <td style="padding: 12px; text-align: right; color: #C3AB74; font-weight: 600;">—</td>
+                </tr>
+            `;
+                return;
+            }
+
+            if (question.isMultiSelect || answer) {
+                if (Array.isArray(answer) && answer.length > 0) {
+                    // Filter out 'none' option
+                    const filteredAnswers = answer.filter(id => id !== 'none');
+
+                    if (filteredAnswers.length === 0) {
+                        // All selections were 'none'
+                        html += `
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 12px; color: #666;">${question.question}</td>
+                            <td style="padding: 12px; font-weight: 500;">None Required</td>
+                            <td style="padding: 12px; text-align: right; color: #C3AB74; font-weight: 600;">—</td>
+                        </tr>
+                    `;
+                    } else {
+                        filteredAnswers.forEach((id, index) => {
+                            const option = question.options.find(opt => opt.id === id);
+                            if (option) {
+                                const price = getOptionPrice(option);
+                                const priceNum = price !== null && price !== undefined ? parseFloat(price.replace(/,/g, '')) : 0;
+                                totalPrice += priceNum;
+                                const priceDisplay = price !== null && price !== undefined ? '$' + price : '—';
+
+                                html += `
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; color: #666; vertical-align: top;">${index === 0 ? question.question : ''}</td>
+                                <td style="padding: 12px; font-weight: 500;">${option.label}</td>
+                                <td style="padding: 12px; text-align: right; color: #C3AB74; font-weight: 600;">${priceDisplay}</td>
+                            </tr>
+                            `;
+                            }
+                        });
+                    }
+                } else if (answer && !Array.isArray(answer)) {
+                    const option = question.options.find(opt => opt.id === answer);
+                    if (option) {
+                        let price = getOptionPrice(option);
+                        let priceNum = 0;
+                        let selectionText = option.label;
+
+                        // Special handling for bed + finish combination
+                        if (question.id === 'q1') {
+                            const q2bed = quizData.questions.find(q => q.id === 'q2-bed');
+                            const q2headboard = quizData.questions.find(q => q.id === 'q2-headboard');
+                            let bedName = '';
+                            let bedPrice = null;
+
+                            if (state.answers['q2-bed']) {
+                                const bedOption = q2bed?.options.find(opt => opt.id === state.answers['q2-bed']);
+                                if (bedOption) {
+                                    bedName = ' ' + bedOption.label;
+                                    const upgradePrice = getOptionPrice(bedOption);
+                                    const q1Price = getOptionPrice(option);
+
+                                    if (upgradePrice && upgradePrice !== '0') {
+                                        const q1Num = q1Price ? parseFloat(q1Price.replace(/,/g, '')) : 0;
+                                        const upgradeNum = parseFloat(upgradePrice.replace(/,/g, ''));
+                                        price = (q1Num + upgradeNum).toLocaleString();
+                                    }
+                                }
+                            } else if (state.answers['q2-headboard']) {
+                                const headboardOption = q2headboard?.options.find(opt => opt.id === state.answers['q2-headboard']);
+                                if (headboardOption) {
+                                    bedName = ' - ' + headboardOption.label;
+                                }
+                            }
+
+                            selectionText = option.label + bedName;
+                        } else if (question.id === 'q2-bed' || question.id === 'q2-headboard') {
+                            // Skip q2 rows, they're merged into q1
+                            return;
+                        }
+
+                        if (price !== null && price !== undefined && price !== '0') {
+                            priceNum = parseFloat(price.toString().replace(/,/g, ''));
+                            totalPrice += priceNum;
+                        }
+
+                        html += `
+                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                        <td style="padding: 12px; color: #666;">${question.question}</td>
+                        <td style="padding: 12px; font-weight: 500;">${selectionText}</td>
+                        <td style="padding: 12px; text-align: right; color: #C3AB74; font-weight: 600;">
+                            ${price !== null && price !== undefined ? '$' + price : '—'}
+                        </td>
+                    </tr>
+                    `;
+                    }
+                }
+            }
+        });
+
+        html += `
+            </tbody>
+        </table>
+    `;
+
+        html += `
+        <div style="background: #25385b; color: white; padding: 5px 10px; margin-top: 25px; border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.2em;">
+                <span style="font-weight: 600;">Estimated Subtotal:</span>
+                <span style="color: #C3AB74; font-weight: 700; font-size: 1.15em;">
+                    $${totalPrice.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                </span>
+            </div>
+        </div>
+    `;
+
+        summaryContainer.innerHTML = html;
+    }
+
+    function handleContactOptionClick(e) {
+        const option = e.currentTarget;
+        const contactType = option.getAttribute('data-contact-type');
+
+        document.querySelectorAll('.contact-option').forEach(opt => {
+            opt.classList.remove('selected');
+        });
+        option.classList.add('selected');
+
+        document.getElementById('emailForm').classList.remove('active');
+        document.getElementById('phoneForm').classList.remove('active');
+        document.getElementById('successMessage').classList.remove('active');
+
+        if (contactType === 'email') {
+            document.getElementById('emailForm').classList.add('active');
+        } else if (contactType === 'phone') {
+            document.getElementById('phoneForm').classList.add('active');
+        }
+
+        state.contactType = contactType;
+    }
+
+    function handleEmailSubmit(e) {
+        e.preventDefault();
+
+        try { if (typeof window.handleQuizLeadEmail === 'function') window.handleQuizLeadEmail(); } catch (e2) { }
+        try { if (typeof window.handleQuizLeadEmailRT === 'function') window.handleQuizLeadEmailRT(); } catch (e2) { }
+
+        const email = document.getElementById('emailInput').value;
+        const name = document.getElementById('nameInput').value;
+        const notes = document.getElementById('notesInput').value;
+
+        if (!name) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        const submissionData = {
+            quoteNumber: state.quoteNumber,
+            contactType: 'email',
+            email: email,
+            name: name,
+            notes: notes,
+            answers: state.answers,
+            bedSize: state.selectedBedSize,
+            timestamp: new Date().toISOString()
+        };
+
+        const formData = new FormData();
+        formData.append('action', 'submit_bed_selector');
+        formData.append('data', JSON.stringify(submissionData));
+
+        const submitBtn = document.getElementById('submitEmail');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch('/wp-admin/admin-ajax.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const contactOptions = document.querySelector('.contact-options');
+                    const formTitle = document.querySelector('.form-title');
+                    if (contactOptions) contactOptions.style.display = 'none';
+                    if (formTitle) formTitle.style.display = 'none';
+
+                    document.getElementById('emailForm').classList.remove('active');
+                    document.getElementById('successMessage').classList.add('active');
+                } else {
+                    alert('There was an error submitting your request. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Me the Quote';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your request. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Me the Quote';
+            });
+    }
+
+    function handlePhoneSubmit(e) {
+        e.preventDefault();
+
+        try { if (typeof window.handleQuizLeadPhone === 'function') window.handleQuizLeadPhone(); } catch (e2) { }
+        try { if (typeof window.handleQuizLeadPhoneRT === 'function') window.handleQuizLeadPhoneRT(); } catch (e2) { }
+
+        const name = document.getElementById('phoneNameInput').value;
+        const notes = document.getElementById('phoneNotesInput').value;
+
+        if (!name) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        const submissionData = {
+            quoteNumber: state.quoteNumber,
+            contactType: 'phone',
+            name: name,
+            notes: notes,
+            answers: state.answers,
+            bedSize: state.selectedBedSize,
+            timestamp: new Date().toISOString()
+        };
+
+        const formData = new FormData();
+        formData.append('action', 'submit_bed_selector');
+        formData.append('data', JSON.stringify(submissionData));
+
+        const submitBtn = document.getElementById('submitPhone');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        fetch('/wp-admin/admin-ajax.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const contactOptions = document.querySelector('.contact-options');
+                    const formTitle = document.querySelector('.form-title');
+                    if (contactOptions) contactOptions.style.display = 'none';
+                    if (formTitle) formTitle.style.display = 'none';
+                    
+                    document.getElementById('phoneForm').classList.remove('active');
+                    document.getElementById('successMessage').classList.add('active');
+                } else {
+                    alert('There was an error submitting your request. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Request a Call';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your request. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request a Call';
+            });
+    }
+
+    document.querySelector('.startQuiz').addEventListener('click', initQuiz, false);
+
+</script>
